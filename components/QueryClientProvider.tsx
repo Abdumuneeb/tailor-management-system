@@ -4,7 +4,9 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-
+import theme from "@/lib/theme";
+import { ThemeProvider } from "@mui/material";
+import NextTopLoader from "nextjs-toploader";
 function makeQueryClient() {
   return new QueryClient({
     defaultOptions: {
@@ -41,6 +43,16 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   const queryClient = getQueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <NextTopLoader
+          color="#d73036"
+          showSpinner={false}
+          height={5}
+          zIndex={99999}
+        />
+        {children}
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }

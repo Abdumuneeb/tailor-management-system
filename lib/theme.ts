@@ -16,8 +16,8 @@ let theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#0098DA",
-      light: "#C4BDD8",
+      main: "#d73036",
+      light: "#ffffff",
     },
     secondary: { main: "#EBF304" },
     darkBlue: { main: "#26267F" },
@@ -38,12 +38,13 @@ let theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: ({ theme }) => ({
-          borderRadius: "99px",
+          borderRadius: "8px",
           textTransform: "none",
           boxShadow: "none",
           padding: "0.8rem 0.75rem",
           whiteSpace: "nowrap",
           fontSize: "1rem",
+          color: "#FFFFFF",
           "&.Mui-disabled": {
             backgroundColor: theme.palette.primary.light,
             color: "#FFFFFF",
@@ -113,12 +114,13 @@ let theme = createTheme({
           },
           "& .MuiOutlinedInput-notchedOutline": {
             borderColor: "#ccc",
+            borderRadius: "12px",
           },
           "&:hover .MuiOutlinedInput-notchedOutline": {
             borderColor: "#888",
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#1877F2",
+            borderColor: "#d73036",
           },
         },
       },
@@ -130,7 +132,7 @@ let theme = createTheme({
             color: "#545454 !important",
           },
           "&.Mui-focused": {
-            color: "#1877F2 !important",
+            color: "#d73036 !important",
           },
         },
       },

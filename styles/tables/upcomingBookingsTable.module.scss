@@ -1,0 +1,87 @@
+.historyDashboardTable {
+  table {
+    width: 100%;
+  }
+  a {
+    color: #545454;
+    font-size: 16px;
+    border: 1px solid #b8b8b8;
+    border-radius: 30px;
+    padding: 7px 15px 6px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .select {
+    border-radius: 30px;
+    padding: 0 15px 0 5px;
+    width: 150px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #545454;
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .tableContainer {
+    // border: 1px solid #d8d8d8;
+    box-shadow: 0 0.3125rem 0.3125rem #523f690d;
+    background: #fff;
+    border-bottom: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    thead th {
+      border-bottom-color: #000;
+    }
+    tbody {
+      tr {
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 0 1.875rem rgba(19, 88, 70, 0.1);
+        }
+        &:last-child {
+          border: 0;
+        }
+        .productName {
+          font-size: 16px;
+          font-weight: 600;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 125px;
+        }
+        .productInfo {
+          font-size: 16px;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 125px;
+        }
+        .receiverInfo {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 150px;
+          font-size: 16px;
+          display: block;
+        }
+      }
+      button {
+        padding: 5px 20px 4px;
+        font-size: 16px;
+      }
+    }
+    td {
+      padding: 9px 20px;
+      font-size: 16px;
+    }
+    th {
+      padding: 20px;
+      font-size: 16px;
+    }
+  }
+}

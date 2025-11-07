@@ -1,0 +1,29 @@
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  .card {
+    display: block;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0.3125rem 0.3125rem #523f690d;
+    transition: 300ms;
+    &:hover {
+      box-shadow: 0 1.1rem 1.1rem #00000015;
+      transition: 300ms;
+    }
+    img {
+      display: block;
+      width: 60px;
+      margin: 0 auto 15px auto;
+    }
+    span {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      color: #000;
+    }
+  }
+}
