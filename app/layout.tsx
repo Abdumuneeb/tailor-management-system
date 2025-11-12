@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import Providers from "@/components/QueryClientProvider";
-import { Roboto } from "next/font/google";
+import { Noto_Sans_Arabic, Roboto } from "next/font/google";
 import "@/styles/abstracts/global.scss";
 
 const roboto = Roboto({
   weight: ["400", "500", "600", "700"],
   style: ["normal"],
   subsets: ["latin"],
+  display: "swap",
+});
+
+const nastaliq = Noto_Sans_Arabic({
+  weight: ["400"],
+  subsets: ["arabic"],
   display: "swap",
 });
 

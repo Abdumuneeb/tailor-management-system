@@ -6,7 +6,7 @@ function page() {
     <>
       <h3 className="innerPageTitle">
         Booking Detail
-        <Link href={"/booking/new"}>Measurements / ناپ</Link>
+        <Link href={"/booking/new/1"}>Measurements / ناپ</Link>
       </h3>
       <NewBookingForm />
     </>

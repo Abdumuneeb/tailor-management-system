@@ -1,32 +1,40 @@
 "use client";
 
-import {
-  Box,
-  Grid,
-  TextField,
-  Typography,
-  Button,
-  MenuItem,
-} from "@mui/material";
+import { useState } from "react";
+import TextField from "@mui/material/TextField";
+import MenuItem from "@mui/material/MenuItem";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import styles from "@/styles/newBookingForm.module.scss";
 
 export default function SalwarKameez() {
+  const [qty, setQty] = useState("");
   return (
     <Box className={styles.measurementSection}>
       {/* 🔹 Measurement Fields */}
-      <Grid container spacing={2}>
-        <Grid size={{ md: 4 }}>
-          <Typography variant="body1" sx={{ mb: 1.5 }}>
-            General
-          </Typography>
+      <Grid container spacing={3}>
+        <Grid size={{ md: 4 }} sx={{ borderRight: "1px solid #bbb" }} pr={3}>
           <TextField
-            label="لمبای / Length"
+            label="لمبائی / Length"
             fullWidth
             className={styles.formInputFld}
             sx={{ mb: 2.2 }}
           />
           <TextField
             label="تیرا / Shoulder"
+            fullWidth
+            className={styles.formInputFld}
+            sx={{ mb: 2.2 }}
+          />
+          <TextField
+            label="بازو / Arm "
+            fullWidth
+            className={styles.formInputFld}
+            sx={{ mb: 2.2 }}
+          />
+          <TextField
+            label=" گلا / Neck"
             fullWidth
             className={styles.formInputFld}
             sx={{ mb: 2.2 }}
@@ -44,43 +52,24 @@ export default function SalwarKameez() {
             sx={{ mb: 2.2 }}
           />
           <TextField
-            label="فرنٹ / Front"
-            fullWidth
-            className={styles.formInputFld}
-            sx={{ mb: 2.2 }}
-          />
-          <TextField
-            label="دامن / Daman"
-            fullWidth
-            className={styles.formInputFld}
-            sx={{ mb: 2.2 }}
-          />
-          <TextField
-            label="کالر / Collar"
-            fullWidth
-            className={styles.formInputFld}
-            sx={{ mb: 2.2 }}
-          />
-          <TextField
-            label="شلور لمبای / Shalwar Length"
-            fullWidth
-            className={styles.formInputFld}
-            sx={{ mb: 2.2 }}
-          />
-          <TextField
-            label="پائچہ / Pancha"
-            fullWidth
-            className={styles.formInputFld}
-            sx={{ mb: 2.2 }}
-          />
-          <TextField
-            label="آسن / Aasan"
-            fullWidth
-            className={styles.formInputFld}
-            sx={{ mb: 2.2 }}
-          />
-          <TextField
             label="گھیرا / ghera"
+            fullWidth
+            className={styles.formInputFld}
+            sx={{ mb: 2.2 }}
+          />
+          <Box display={"flex"} sx={{ mb: 2.2 }}>
+            <label className="customSeletBtn radioBtn">
+              <input type="radio" name="shalwarT" defaultChecked />
+              <Box className="card">شلوار</Box>
+            </label>
+            <label className="customSeletBtn radioBtn">
+              <input type="radio" name="shalwarT" />
+              <Box className="card">ٹروزر </Box>
+            </label>
+            <TextField label="لمبای / Length" className={styles.formInputFld} />
+          </Box>
+          <TextField
+            label="پانچہ"
             fullWidth
             className={styles.formInputFld}
             sx={{ mb: 2.2 }}
@@ -89,62 +78,125 @@ export default function SalwarKameez() {
         <Grid size={{ md: 8 }}>
           <Grid container spacing={2}>
             <Grid size={{ md: 6 }}>
-              <Typography variant="body1" sx={{ mb: 1.5 }}>
-                Arm Size 1
-              </Typography>
               <TextField
-                label="بازو / Arm 1"
+                select
+                label="فرنٹ پٹی کندے سے"
                 fullWidth
                 className={styles.formInputFld}
                 sx={{ mb: 2.2 }}
-              />
+                onChange={(e) => setQty(e.target.value)}
+                slotProps={{
+                  select: {
+                    MenuProps: {
+                      disablePortal: true,
+                      PaperProps: {
+                        sx: {
+                          mt: 1,
+                        },
+                      },
+                    },
+                  },
+                }}
+              >
+                <MenuItem value="14½">14½</MenuItem>
+                <MenuItem value="15">15</MenuItem>
+                <MenuItem value="15½">15½</MenuItem>
+                <MenuItem value="16">16</MenuItem>
+                <MenuItem value="16½">16½</MenuItem>
+              </TextField>
               <TextField
-                label="کف / Cuff 1"
+                select
+                label="فرنٹ پٹی بٹن"
+                fullWidth
+                className={styles.formInputFld}
+                onChange={(e) => setQty(e.target.value)}
+                sx={{ mb: 2.2 }}
+                slotProps={{
+                  select: {
+                    MenuProps: {
+                      disablePortal: true,
+                      PaperProps: {
+                        sx: {
+                          mt: 1,
+                        },
+                      },
+                    },
+                  },
+                }}
+              >
+                <MenuItem value="1">4</MenuItem>
+                <MenuItem value="2">5</MenuItem>
+                <MenuItem value="3">6</MenuItem>
+              </TextField>
+              <TextField
+                select
+                label="چاک پٹی بٹن"
                 fullWidth
                 className={styles.formInputFld}
                 sx={{ mb: 2.2 }}
-              />
+                slotProps={{
+                  select: {
+                    MenuProps: {
+                      disablePortal: true,
+                      PaperProps: {
+                        sx: {
+                          mt: 1,
+                        },
+                      },
+                    },
+                  },
+                }}
+              >
+                <MenuItem value="yes">Yes</MenuItem>
+                <MenuItem value="no">No</MenuItem>
+              </TextField>
               <TextField
-                label="بٹن پٹی / Btn Patti 1"
+                select
+                label="فرنٹ پٹی"
                 fullWidth
                 className={styles.formInputFld}
                 sx={{ mb: 2.2 }}
-              />
+                slotProps={{
+                  select: {
+                    MenuProps: {
+                      disablePortal: true,
+                      PaperProps: {
+                        sx: {
+                          mt: 1,
+                        },
+                      },
+                    },
+                  },
+                }}
+              >
+                <MenuItem value="s1">نوکدار</MenuItem>
+                <MenuItem value="s2">سیدھی</MenuItem>
+                <MenuItem value="s3">گول</MenuItem>
+                <MenuItem value="s4">گم پٹی</MenuItem>
+              </TextField>
               <TextField
-                label="جیب / Pocket 1"
+                select
+                label="بٹن سٹاۂل"
                 fullWidth
                 className={styles.formInputFld}
                 sx={{ mb: 2.2 }}
-              />
-            </Grid>
-            <Grid size={{ md: 6 }}>
-              <Typography variant="body1" sx={{ mb: 1.5 }}>
-                Arm Size 2
-              </Typography>
-              <TextField
-                label="بازو / Arm 2"
-                fullWidth
-                className={styles.formInputFld}
-                sx={{ mb: 2.2 }}
-              />
-              <TextField
-                label="کف / Cuff 2"
-                fullWidth
-                className={styles.formInputFld}
-                sx={{ mb: 2.2 }}
-              />
-              <TextField
-                label="بٹن پٹی / Btn Patti 2"
-                fullWidth
-                className={styles.formInputFld}
-                sx={{ mb: 2.2 }}
-              />
-              <TextField
-                label="جیب / Pocket 2"
-                fullWidth
-                className={styles.formInputFld}
-                sx={{ mb: 2.2 }}
-              />
+                slotProps={{
+                  select: {
+                    MenuProps: {
+                      disablePortal: true,
+                      PaperProps: {
+                        sx: {
+                          mt: 1,
+                        },
+                      },
+                    },
+                  },
+                }}
+              >
+                <MenuItem value="type1">سادہ</MenuItem>
+                <MenuItem value="type2">فینسی</MenuItem>
+                <MenuItem value="type3">سادہ میٹل</MenuItem>
+              </TextField>
             </Grid>
           </Grid>
           <Grid size={{ md: 12 }}>
@@ -189,29 +241,8 @@ export default function SalwarKameez() {
 
       {/* 🔹 Button Qty & Extras */}
       <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid size={{ md: 3 }}>
-          <TextField
-            select
-            label="Button Qty"
-            fullWidth
-            className={styles.formInputFld}
-          >
-            <MenuItem value="1">1</MenuItem>
-            <MenuItem value="2">2</MenuItem>
-            <MenuItem value="3">3</MenuItem>
-          </TextField>
-        </Grid>
-        <Grid size={{ md: 3 }}>
-          <TextField
-            select
-            label="Button Type"
-            fullWidth
-            className={styles.formInputFld}
-          >
-            <MenuItem value="metal">Metal</MenuItem>
-            <MenuItem value="plastic">Plastic</MenuItem>
-          </TextField>
-        </Grid>
+        <Grid size={{ md: 3 }}></Grid>
+        <Grid size={{ md: 3 }}></Grid>
         <Grid size={{ md: 3 }}>
           <TextField
             select

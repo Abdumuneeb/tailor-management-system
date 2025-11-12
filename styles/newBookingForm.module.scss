@@ -2,6 +2,14 @@
   background-color: #fff;
   border-radius: 12px;
   width: 100%;
+  font-family: "Noto Sans Arabic", sans-serif !important;
+  font-size: 14px;
+  font-weight: 600;
+
+  ul li {
+    font-family: "Noto Sans Arabic", sans-serif !important;
+    font-weight: 600;
+  }
 }
 .measurementTable {
   border: 1px solid #ccc;
