@@ -1,0 +1,107 @@
+@use "./breakpoints" as *;
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0 0 0 !important;
+  background: #f8f8f8;
+}
+.rootMainContainer {
+  margin: 6px 0 0;
+}
+a {
+  text-decoration: none;
+}
+.urdu {
+  font-family: "Noto Nastaliq Urdu", serif;
+}
+.innerPageTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+  align-items: center;
+  a {
+    font-size: 20px;
+    background: #d73036;
+    display: block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 400;
+  }
+}
+.MuiPickersOutlinedInput-root {
+  border-radius: 10px !important;
+}
+.customSeletBtn {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  font-family: "Noto Sans Arabic", sans-serif !important;
+  font-weight: 600;
+  input {
+    position: absolute;
+    left: 5px;
+    width: calc(100% - 20px);
+    top: 0;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 9;
+  }
+  .card {
+    display: inline-block;
+    padding: 10px 20px 10px 50px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    position: relative;
+    color: #666;
+    &::after {
+      content: "";
+      border: 1px solid #ccc;
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+      position: absolute;
+      top: 16px;
+      left: 15px;
+    }
+    &::before {
+      content: "";
+      background: #d73036;
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      position: absolute;
+      top: 21px;
+      left: 20px;
+      display: none;
+    }
+  }
+  &.radioBtn {
+    .card {
+      &::after,
+      &::before {
+        border-radius: 50%;
+      }
+    }
+  }
+  input + .card:hover {
+    cursor: pointer;
+  }
+
+  input:checked + .card {
+    border-color: #d73036;
+    -webkit-transition: border 0.3s;
+    -o-transition: border 0.3s;
+    transition: border 0.3s;
+    color: #d73036;
+  }
+  input:checked + .card::after {
+    border-color: #d73036;
+  }
+  input:checked + .card::before {
+    display: block;
+  }
+}

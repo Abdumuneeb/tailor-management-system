@@ -1,0 +1,58 @@
+.topHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background-color: #ffffff;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+  margin-left: 330px;
+  h3 {
+    font-size: 28px;
+  }
+  .searchBox {
+    flex-grow: 1;
+    .searchField {
+      position: relative;
+      width: 450px;
+      margin: 0 auto;
+      .formInputFld {
+        background-color: #f8f8f8;
+        border-radius: 12px;
+      }
+      .searchIcon {
+        position: absolute;
+        top: 53%;
+        right: 15px;
+        transform: translateY(-50%);
+        z-index: 1;
+      }
+    }
+  }
+  .logOut {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+}
+
+.dashBoardContainer,
+.main {
+  padding: 40px 80px 30px 410px;
+}
+
+.sideBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100dvh;
+  width: 330px;
+  background: #135846;
+  .logo {
+    text-align: center;
+    padding: 30px 0;
+    img {
+      width: 240px;
+    }
+  }
+}
